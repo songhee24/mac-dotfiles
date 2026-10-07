@@ -2,10 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSStatusItem VisibleCC Item-0</key>
+	<false/>
 	<key>appearanceSize</key>
 	<string>1</string>
 	<key>appearanceStyle</key>
 	<string>0</string>
+	<key>appearanceStyleOverride</key>
+	<string>0</string>
+	<key>appearanceTheme</key>
+	<string>2</string>
+	<key>hideColoredCircles</key>
+	<string>false</string>
+	<key>hideSpaceNumberLabels</key>
+	<string>false</string>
+	<key>hideStatusIcons</key>
+	<string>false</string>
 	<key>holdShortcut</key>
 	<dict>
 		<key>secureData</key>
@@ -22,16 +34,32 @@
 		<key>string</key>
 		<string>⌘</string>
 	</dict>
+	<key>menubarIcon</key>
+	<string>4</string>
+	<key>menubarIconShown</key>
+	<string>false</string>
 	<key>onboardingShortcutUsed</key>
 	<string>true</string>
 	<key>preferencesVersion</key>
 	<string>11.9.0</string>
+	<key>previewFocusedWindow</key>
+	<string>true</string>
 	<key>settingsWindowShownOnFirstLaunch</key>
 	<string>true</string>
 	<key>shortcutCount</key>
 	<string>1</string>
 	<key>shortcutStyle</key>
+	<string>1</string>
+	<key>shortcutStyleOverride</key>
 	<string>0</string>
+	<key>showOnScreen</key>
+	<string>0</string>
+	<key>showTabsAsWindows</key>
+	<string>0</string>
+	<key>showTitles</key>
+	<string>0</string>
+	<key>titleTruncation</key>
+	<string>2</string>
 	<key>updatePolicy</key>
 	<string>1</string>
 </dict>

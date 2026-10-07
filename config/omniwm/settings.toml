@@ -10,14 +10,14 @@ mode = "dark"
 tabRailAppIcons = false
 
 [borders]
-enabled = false
-width = 1.5
+enabled = true
+width = 3.5
 
 [borders.color]
 alpha = 1.0
-blue = 1.0
-green = 0.0
-red = 0.6453538537025452
+blue = 0.8787232041358948
+green = 1.0
+red = 0.0
 
 [borders.glow]
 enabled = false
@@ -65,7 +65,7 @@ defaultLayoutType = "dwindle"
 hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift+Command"
 ipcEnabled = false
-preventSleepEnabled = false
+preventSleepEnabled = true
 systemHyperTrigger = "None"
 updateChecksEnabled = true
 
@@ -96,7 +96,7 @@ rehideIntervalSeconds = 5.0
 
 [mouseWarp]
 constrainToArrangement = false
-enabled = true
+enabled = false
 margin = 1
 
 [niri]
@@ -277,19 +277,19 @@ minHeight = 320.0
 minWidth = 660.0
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+S"
 id = "toggleScratchpad.1"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Shift+S"
 id = "assignFocusedWindowToScratchpad.1"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+D"
 id = "toggleScratchpad.2"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Shift+D"
 id = "assignFocusedWindowToScratchpad.2"
 
 [[hotkeys]]
@@ -505,11 +505,11 @@ binding = "Control+Option+Tab"
 id = "workspaceBackAndForth"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Option+Right Arrow"
 id = "switchWorkspace.next"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Option+Left Arrow"
 id = "switchWorkspace.previous"
 
 [[hotkeys]]
@@ -993,7 +993,7 @@ binding = "Unassigned"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+F"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
@@ -1046,7 +1046,7 @@ type = "main"
 
 [[workspaces]]
 id = "454CECD4-5E9D-4ED1-95D7-979D48817F5F"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "2"
 
 [workspaces.monitorAssignment]
