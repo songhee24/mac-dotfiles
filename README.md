@@ -30,7 +30,7 @@ The snapshot lives in `~/.mac-dotfiles-snapshot/` (taken once, never overwritten
 | ⌥ Tab | previous window |
 | ⌥ Return | fullscreen (OmniWM) |
 | ⌥⇧ O | Overview of all windows |
-| ⌥ ` | Quake drop-down terminal (Ghostty) |
+| ⌥ Esc | Quake drop-down terminal (Ghostty) — moved from ⌥ `: on a Russian/ISO keyboard that key is not left of 1 |
 | ⌃⌥ Space | OmniWM command palette |
 
 Rules: never run a second window manager next to OmniWM (Rectangle, AeroSpace, Raycast's own window commands).
