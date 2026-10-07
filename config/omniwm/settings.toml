@@ -10,14 +10,19 @@ mode = "dark"
 tabRailAppIcons = false
 
 [borders]
-enabled = true
-width = 5.0
+enabled = false
+width = 1.5
 
 [borders.color]
 alpha = 1.0
-blue = 0.979300037944676
-green = 1.0
-red = 0.08458520228437894
+blue = 1.0
+green = 0.0
+red = 0.6453538537025452
+
+[borders.glow]
+enabled = false
+opacity = 0.6
+radius = 8.0
 
 [clipboard]
 historyEnabled = false
@@ -163,30 +168,31 @@ showWorkspaceName = false
 useWorkspaceId = false
 
 [workspaceBar]
-backgroundOpacity = 0.1
+backgroundOpacity = 0.30000000000000004
 deduplicateAppIcons = false
 enabled = true
 excludedBundleIDs = []
 height = 24.0
-hideEmptyWorkspaces = false
-hideInNativeFullscreen = false
-hoverPreviewsEnabled = true
-notchActiveZoneWidth = 180.0
-notchMode = "moveBelowMenuBar"
+hideEmptyWorkspaces = true
+hideInNativeFullscreen = true
+hoverPreviewsEnabled = false
+inactiveIconOpacity = 1.0
+notchActiveZoneWidth = 240.0
+notchMode = "splitActiveLeft"
 notificationBadgeRefreshIntervalSeconds = 5.0
-notificationBadges = "off"
-position = "overlappingMenuBar"
+notificationBadges = "dot"
+position = "bottom"
 reserveLayoutSpace = false
 revealHoldMilliseconds = 200.0
 revealModifier = "off"
-showAccentHighlights = true
+showAccentHighlights = false
 showFloatingWindows = false
 showItemBackgrounds = true
-showLabels = true
+showLabels = false
 solidBlackBackground = false
 systemStatsButton = false
 transparentBackground = false
-windowLevel = "popup"
+windowLevel = "screensaver"
 xOffset = 0.0
 yOffset = 0.0
 
