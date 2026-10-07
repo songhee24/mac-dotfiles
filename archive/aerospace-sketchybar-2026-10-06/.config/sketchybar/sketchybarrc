@@ -1,0 +1,57 @@
+#!/bin/bash
+# SketchyBar - glass top bar (mac-dotfiles, 2026-10-06). Left: AeroSpace workspaces + the front app.
+# Right: clock, battery, Wi-Fi, volume, CPU. Reload after an edit: sketchybar --reload
+export PATH="/opt/homebrew/bin:$PATH"
+source "$CONFIG_DIR/colors.sh"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+FONT="JetBrainsMono Nerd Font"
+
+sketchybar --bar position=top height=34 margin=8 y_offset=6 corner_radius=10 \
+  blur_radius=20 color=$BAR_COLOR border_width=1 border_color=$BAR_BORDER \
+  shadow=off sticky=on topmost=window padding_left=6 padding_right=6
+
+sketchybar --default \
+  icon.font="$FONT:Bold:14.0" label.font="$FONT:SemiBold:12.5" \
+  icon.color=$TEXT label.color=$TEXT \
+  padding_left=3 padding_right=3 icon.padding_left=8 icon.padding_right=4 \
+  label.padding_left=2 label.padding_right=8 \
+  background.color=$PILL_COLOR background.corner_radius=7 background.height=24
+
+# --- left: workspaces 1-9 (only the focused one and ones with windows are drawn) ---
+sketchybar --add event aerospace_workspace_change
+for sid in 1 2 3 4 5 6 7 8 9; do
+  sketchybar --add item "space.$sid" left \
+    --subscribe "space.$sid" aerospace_workspace_change front_app_switched system_woke \
+    --set "space.$sid" icon.drawing=off label="$sid" label.align=center label.width=26 \
+      label.padding_left=0 label.padding_right=0 padding_left=1 padding_right=1 \
+      background.color=$LAVENDER background.corner_radius=6 background.height=22 background.drawing=off \
+      click_script="aerospace workspace $sid" script="$PLUGIN_DIR/aerospace.sh $sid"
+done
+
+sketchybar --add item sep left \
+  --set sep icon.drawing=off label="│" label.color=$SURFACE1 background.drawing=off label.padding_left=4 label.padding_right=4
+
+sketchybar --add item front_app left \
+  --subscribe front_app front_app_switched \
+  --set front_app icon="󰣆" icon.color=$MAUVE label.color=$MAUVE background.drawing=off script="$PLUGIN_DIR/front_app.sh"
+
+# --- right (added right-to-left) ---
+sketchybar --add item clock right \
+  --set clock icon="󰥔" icon.color=$LAVENDER update_freq=30 script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item battery right \
+  --subscribe battery power_source_change system_woke \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh"
+
+sketchybar --add item wifi right \
+  --subscribe wifi wifi_change system_woke \
+  --set wifi icon.color=$TEAL update_freq=60 script="$PLUGIN_DIR/wifi.sh"
+
+sketchybar --add item volume right \
+  --subscribe volume volume_change \
+  --set volume icon.color=$PEACH script="$PLUGIN_DIR/volume.sh"
+
+sketchybar --add item cpu right \
+  --set cpu icon="󰍛" icon.color=$BLUE update_freq=5 script="$PLUGIN_DIR/cpu.sh"
+
+sketchybar --update
