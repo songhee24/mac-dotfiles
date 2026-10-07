@@ -8,7 +8,10 @@ Terminal look (Ghostty + Starship) lives in [mac-terminal-glass](https://github.
 | [OmniWM](https://omniwm.app) | Tiling: Niri-style scrolling or Hyprland-style dwindle, workspaces, Overview, Quake terminal | `brew install --cask omniwm` |
 | [AltTab](https://alt-tab.app) | ⌘Tab with a preview of every window | `brew install --cask alt-tab` |
 | [Stats](https://github.com/exelban/stats) | CPU / RAM / network in the menu bar | `brew install --cask stats` |
-| [Raycast](https://raycast.com) | Launcher, clipboard history, snippets, extensions | `brew install --cask raycast` |
+| ~~[Raycast](https://raycast.com)~~ | Off for now (2026-10-07). Launcher, clipboard history, snippets; free plan, Pro $8–10/mo | `brew install --cask raycast` |
+
+Prices: OmniWM and Stats are fully free (open source). AltTab's core is free (switcher, previews, Shortcut 1 = ⌘Tab);
+AltTab Pro (search, styles, auto-size, Shortcut 2+) is paid with a 14-day trial that simply ends — not needed here.
 
 ## Install · restore · save
 ```sh
@@ -21,7 +24,7 @@ The snapshot lives in `~/.mac-dotfiles-snapshot/` (taken once, never overwritten
 ## Shortcuts (⌥ = Option)
 | Keys | Action |
 |---|---|
-| ⌘Tab | AltTab: every window, with previews (set once in AltTab › Controls: hold **⌘**) |
+| ⌘Tab | AltTab: every window, with previews (set once in AltTab › Controls: Shortcut 1 hold **⌘**; delete Shortcut 2) |
 | ⌥ 1…9 · ⌥⇧ 1…9 | OmniWM: go to workspace · send the window there |
 | ⌥ arrows · ⌥⇧ arrows | focus · move a window |
 | ⌥ Tab | previous window |
@@ -29,7 +32,6 @@ The snapshot lives in `~/.mac-dotfiles-snapshot/` (taken once, never overwritten
 | ⌥⇧ O | Overview of all windows |
 | ⌥ ` | Quake drop-down terminal (Ghostty) |
 | ⌃⌥ Space | OmniWM command palette |
-| ⌥ Space | Raycast (set in its welcome window) |
 
 Rules: never run a second window manager next to OmniWM (Rectangle, AeroSpace, Raycast's own window commands).
 OmniWM needs "Displays have separate Spaces" on (macOS default).

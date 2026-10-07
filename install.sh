@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-# mac-dotfiles installer (2026-10-07): OmniWM (tiling) + AltTab (window switcher) + Stats (system monitor) +
-# Raycast (launcher). All four from the official Homebrew casks. Idempotent.
+# mac-dotfiles installer (2026-10-07): OmniWM (tiling) + AltTab (window switcher) + Stats (system monitor), from the
+# official Homebrew casks. Raycast was part of it, off for now (see APPS). Idempotent.
 #   - First run only: saves a snapshot of the Mac as it was (~/.mac-dotfiles-snapshot/) for restore.sh.
 #   - Then installs the apps, copies the saved settings from config/ (if any) and starts the apps.
 # Undo everything: bash restore.sh      Save your tuned settings into this repo: bash save.sh
 set -euo pipefail
 REPO=$(cd "$(dirname "$0")" && pwd)
 SNAP="$HOME/.mac-dotfiles-snapshot"
-APPS=(omniwm alt-tab stats raycast)
+# 2026-10-07 ← was: (omniwm alt-tab stats raycast). Raycast is off for now (Akara: "seems raycast for now we can turn
+# off"). Bring it back: add raycast here and Raycast to the "Start" loop below.
+APPS=(omniwm alt-tab stats)
 eval "$(/opt/homebrew/bin/brew shellenv)"
 say() { printf '\033[36m==> %s\033[0m\n' "$*"; }
 
@@ -41,10 +43,10 @@ done
 
 say "Start"
 # By path: right after brew moves an app in, LaunchServices may not know its name yet ("Unable to find application").
-for app in OmniWM AltTab Stats Raycast; do open "/Applications/$app.app" || echo "   could not open $app"; done
+for app in OmniWM AltTab Stats; do open "/Applications/$app.app" || echo "   could not open $app"; done
 cat <<'EOF'
 Done. Allow the permissions macOS asks for (System Settings > Privacy & Security):
   OmniWM  - Device Control and Data Access + Input Monitoring (Screen Recording optional: Overview thumbnails)
-  AltTab  - Device Control and Data Access + Screen Recording (window previews)
-  Raycast - follow its welcome window
+  AltTab  - Device Control and Data Access + Screen Recording (window previews); then AltTab > Controls:
+            Shortcut 1 hold key -> Command (free), delete Shortcut 2 (Pro-only, and its Option-` clashes with OmniWM)
 EOF
