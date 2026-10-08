@@ -20,6 +20,8 @@ PY
 }
 
 [ -f "$HOME/.config/omniwm/settings.toml" ] && cp "$HOME/.config/omniwm/settings.toml" "$REPO/config/omniwm/settings.toml" && echo "saved OmniWM settings.toml"
+# 2026-10-08: the cheat sheet (scratchpad 3, Option+A). restore-scratchpads.sh is edited in the repo, not copied back.
+[ -f "$HOME/.config/omniwm/shortcuts.txt" ] && cp "$HOME/.config/omniwm/shortcuts.txt" "$REPO/config/omniwm/shortcuts.txt" && echo "saved OmniWM shortcuts.txt"
 
 defaults export com.lwouis.alt-tab-macos "$REPO/config/alt-tab.plist"
 filter_plist "$REPO/config/alt-tab.plist" '.*' '(MSAppCenter.*|NSWindow Frame.*|SU.*|.*[Ll]icen[cs]e.*|.*[Uu]sage.*|.*[Tt]rial.*)'
@@ -30,7 +32,7 @@ filter_plist "$REPO/config/stats.plist" '(CPU|GPU|RAM|Disk|Sensors|Network|Batte
 echo "saved Stats settings"
 
 # Guard: nothing that looks like a UUID or an IPv4 address may reach the public repo.
-for f in "$REPO/config/alt-tab.plist" "$REPO/config/stats.plist" "$REPO/config/omniwm/settings.toml"; do
+for f in "$REPO/config/alt-tab.plist" "$REPO/config/stats.plist" "$REPO/config/omniwm/settings.toml" "$REPO/config/omniwm/shortcuts.txt"; do
   case "$f" in *.plist) plutil -convert xml1 "$f" ;; esac
   # Allowed: OmniWM's own rule ids (`id = "<uuid>"` lines in [[appRules]]) - random per rule, not tied to a device.
   if grep -v -E '^id = "[0-9A-Fa-f-]{36}"$' "$f" \

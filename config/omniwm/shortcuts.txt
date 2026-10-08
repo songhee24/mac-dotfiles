@@ -1,0 +1,64 @@
+OMNIWM SHORTCUTS  (Niri layout, 2026-10-08)
+Show / hide this sheet:  Option+A        Put a window in this slot:  Option+Shift+A
+File: ~/.config/omniwm/shortcuts.txt
+
+MOVE AROUND
+  Option+Left / Right              next window (the row slides sideways, loops)
+  Option+Up / Down                 window above / below in the same column
+  Option+Tab                       previous window
+  Option+Home / End                first / last column
+  Control+Option+1..9              go to column 1..9
+  3 fingers left / right           scroll the row
+  Option+Shift + mouse wheel       scroll the row
+
+WORKSPACES
+  Option+1..9                      go to workspace
+  Option+Shift+1..9                send window to workspace
+  3 fingers up / down              next / previous workspace
+  Control+Option+Tab               back to the last workspace
+  Control+Option+Shift+Up / Down   send window to the workspace above / below
+  Control+Option+Shift+PgUp / PgDn send the whole column to the workspace above / below
+
+BUILD TILES (Niri columns)
+  Option+Shift+Left / Right        stack window into the next column / pull it back out
+  Option+Shift+Up / Down           reorder windows inside a column
+  Control+Option+Shift+Left / Right  move the whole column
+  Control+Option+Home / End        move the column to the first / last place
+  Option+T                         show the column as tabs (on / off)
+
+SIZE
+  Option+.  /  Option+,            column width: 1/3, 1/2, 2/3
+  Option+=  /  Option+-            column wider / narrower
+  Option+Shift+=  /  Option+Shift+-  window taller / shorter in its column
+  Control+Option+R                 reset window height
+  Option+Shift+F                   column full width (on / off)
+  Control+Option+F                 column fills the free space
+  Option+Shift+B                   make sizes equal
+  Option+Return                    fullscreen (on / off)
+  Option + drag a window           swap it with the window you drop it on
+  Option + right-drag              resize
+
+OVERVIEW AND TOOLS
+  Option+Shift+O                   overview (or 4 fingers up / down)
+                                   inside: type to search, arrows, Enter = go,
+                                   Esc = close, Cmd+W = close the selected window
+  Control+Option+Space             command palette
+  Control+Option+M                 app menu anywhere
+  Option+Shift+R                   bring floating windows to the front
+  Option+Shift+L                   switch this workspace: Niri <-> Dwindle
+  Option+`                         drop-down terminal (this key is missing on this
+                                   Mac's Russian keyboard)
+
+SCRATCHPADS (pop-up windows over any workspace)
+  Option+Shift+S / D / A           put the window in slot 1 / 2 / 3
+  Option+S / D / A                 show / hide slot 1 / 2 / 3
+  After a login or an OmniWM restart a helper puts this sheet (slot 3) and Telegram
+  (slot 1, if it is open) back by itself. Others: assign again.
+
+MONITORS
+  Control+Command+Tab              next monitor
+  Control+Command+`                last monitor (same missing key)
+
+GHOSTTY
+  Cmd+N                            new window = new tile
+  Cmd+T                            new tab = NOT tiled (stays inside one window)

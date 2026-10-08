@@ -10,19 +10,14 @@ mode = "dark"
 tabRailAppIcons = false
 
 [borders]
-enabled = true
-width = 3.5
+enabled = false
+width = 5.0
 
 [borders.color]
 alpha = 1.0
-blue = 0.8787232041358948
+blue = 0.979300037944676
 green = 1.0
-red = 0.0
-
-[borders.glow]
-enabled = false
-opacity = 0.6
-radius = 8.0
+red = 0.08458520228437894
 
 [clipboard]
 historyEnabled = false
@@ -35,7 +30,7 @@ maxTotalBytes = 67108864
 defaultSplitRatio = 1.0
 moveToRootStable = true
 singleWindowFit = "fill"
-smartSplit = true
+smartSplit = false
 splitWidthMultiplier = 1.0
 useGlobalGaps = true
 
@@ -50,7 +45,7 @@ raiseOnMouseFocus = false
 
 [gaps]
 fullscreenUsesOuterGaps = false
-size = 0.0
+size = 16.0
 
 [gaps.outer]
 bottom = 0.0
@@ -61,11 +56,11 @@ top = 0.0
 [general]
 animationSpeed = 1.0
 animationsEnabled = true
-defaultLayoutType = "dwindle"
+defaultLayoutType = "niri"
 hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift+Command"
-ipcEnabled = false
-preventSleepEnabled = true
+ipcEnabled = true
+preventSleepEnabled = false
 systemHyperTrigger = "None"
 updateChecksEnabled = true
 
@@ -74,7 +69,7 @@ fingerCount = 3
 invertDirection = true
 mouseMoveModifierKey = "option"
 mouseResizeModifierKey = "option"
-overviewGestureEnabled = false
+overviewGestureEnabled = true
 overviewGestureFingerCount = 4
 scrollEnabled = true
 scrollModifierKey = "optionShift"
@@ -86,7 +81,7 @@ windowMoveFingerCount = 4
 windowResizeEnabled = false
 windowResizeFingerCount = 3
 workspaceSwipeAxis = "vertical"
-workspaceSwipeEnabled = false
+workspaceSwipeEnabled = true
 workspaceSwipeFingerCount = 3
 
 [hiddenBar]
@@ -96,18 +91,19 @@ rehideIntervalSeconds = 5.0
 
 [mouseWarp]
 constrainToArrangement = false
-enabled = false
+enabled = true
 margin = 1
 
 [niri]
 alwaysCenterSingleColumn = false
 centerFocusedColumn = "never"
 containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
+defaultContainerPrimarySpan = 0.5
 edgeGaps = true
 infiniteLoop = true
 resizeStepPercent = 5
 singleWindowFit = "fill"
-visibleContainerCount = 1
+visibleContainerCount = 2
 
 [overview]
 enabled = true
@@ -168,31 +164,30 @@ showWorkspaceName = false
 useWorkspaceId = false
 
 [workspaceBar]
-backgroundOpacity = 0.30000000000000004
+backgroundOpacity = 0.1
 deduplicateAppIcons = false
-enabled = true
+enabled = false
 excludedBundleIDs = []
 height = 24.0
 hideEmptyWorkspaces = true
-hideInNativeFullscreen = true
-hoverPreviewsEnabled = false
-inactiveIconOpacity = 1.0
-notchActiveZoneWidth = 240.0
-notchMode = "splitActiveLeft"
+hideInNativeFullscreen = false
+hoverPreviewsEnabled = true
+notchActiveZoneWidth = 180.0
+notchMode = "moveBelowMenuBar"
 notificationBadgeRefreshIntervalSeconds = 5.0
-notificationBadges = "dot"
-position = "bottom"
+notificationBadges = "off"
+position = "overlappingMenuBar"
 reserveLayoutSpace = false
 revealHoldMilliseconds = 200.0
 revealModifier = "off"
-showAccentHighlights = false
-showFloatingWindows = false
+showAccentHighlights = true
+showFloatingWindows = true
 showItemBackgrounds = true
-showLabels = false
+showLabels = true
 solidBlackBackground = false
 systemStatsButton = false
 transparentBackground = false
-windowLevel = "screensaver"
+windowLevel = "popup"
 xOffset = 0.0
 yOffset = 0.0
 
@@ -293,11 +288,11 @@ binding = "Option+Shift+D"
 id = "assignFocusedWindowToScratchpad.2"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+A"
 id = "toggleScratchpad.3"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Shift+A"
 id = "assignFocusedWindowToScratchpad.3"
 
 [[hotkeys]]
@@ -505,11 +500,11 @@ binding = "Control+Option+Tab"
 id = "workspaceBackAndForth"
 
 [[hotkeys]]
-binding = "Control+Option+Right Arrow"
+binding = "Unassigned"
 id = "switchWorkspace.next"
 
 [[hotkeys]]
-binding = "Control+Option+Left Arrow"
+binding = "Unassigned"
 id = "switchWorkspace.previous"
 
 [[hotkeys]]
@@ -897,11 +892,11 @@ binding = "Control+Option+R"
 id = "resetWindowSecondarySpan"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Minus"
 id = "setContainerPrimarySpan.decrease10Percent"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Equal"
 id = "setContainerPrimarySpan.increase10Percent"
 
 [[hotkeys]]
@@ -929,11 +924,11 @@ binding = "Unassigned"
 id = "moveToRoot"
 
 [[hotkeys]]
-binding = "Option+Slash"
+binding = "Unassigned"
 id = "toggleSplit"
 
 [[hotkeys]]
-binding = "Option+Shift+Slash"
+binding = "Unassigned"
 id = "swapSplit"
 
 [[hotkeys]]
@@ -953,11 +948,11 @@ binding = "Unassigned"
 id = "resizeShrink.vertical"
 
 [[hotkeys]]
-binding = "Option+Equal"
+binding = "Unassigned"
 id = "resizeFocusedWindow.grow"
 
 [[hotkeys]]
-binding = "Option+Minus"
+binding = "Unassigned"
 id = "resizeFocusedWindow.shrink"
 
 [[hotkeys]]
@@ -993,7 +988,7 @@ binding = "Unassigned"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Option+F"
+binding = "Unassigned"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
@@ -1021,7 +1016,7 @@ binding = "Unassigned"
 id = "toggleHiddenBarPanel"
 
 [[hotkeys]]
-binding = "Option+Escape"
+binding = "Option+Grave"
 id = "toggleQuakeTerminal"
 
 [[hotkeys]]
@@ -1038,7 +1033,7 @@ id = "toggleSystemStats"
 
 [[workspaces]]
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "1"
 
 [workspaces.monitorAssignment]
@@ -1054,7 +1049,7 @@ type = "main"
 
 [[workspaces]]
 id = "BEB842B5-E894-4791-9FD1-397C3CDD3538"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "3"
 
 [workspaces.monitorAssignment]
@@ -1062,7 +1057,7 @@ type = "main"
 
 [[workspaces]]
 id = "248AA883-2261-4D45-943C-79C0E46A232B"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "4"
 
 [workspaces.monitorAssignment]
@@ -1070,7 +1065,7 @@ type = "main"
 
 [[workspaces]]
 id = "8B8C45D6-CE9E-41D9-BD50-BE4989D5E3DE"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "5"
 
 [workspaces.monitorAssignment]
@@ -1079,7 +1074,7 @@ type = "main"
 [[workspaces]]
 displayName = "❤️"
 id = "5953F2BF-A378-4266-91B2-287174C4FA4D"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "6"
 
 [workspaces.monitorAssignment]
@@ -1088,7 +1083,7 @@ type = "secondary"
 [[workspaces]]
 displayName = "🚀"
 id = "A7D5E104-6985-4516-8ED5-07F144F2A33D"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "7"
 
 [workspaces.monitorAssignment]
@@ -1096,7 +1091,7 @@ type = "secondary"
 
 [[workspaces]]
 id = "0E18F6B0-345A-4078-8B21-33641F07A861"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "8"
 
 [workspaces.monitorAssignment]
@@ -1104,7 +1099,7 @@ type = "main"
 
 [[workspaces]]
 id = "8D4D711C-2B2F-4FEC-86BF-FA952037738A"
-layoutType = "dwindle"
+layoutType = "niri"
 name = "9"
 
 [workspaces.monitorAssignment]

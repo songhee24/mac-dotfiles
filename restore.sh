@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 # Back to the Mac as it was before install.sh (2026-10-07). Quits and uninstalls OmniWM, AltTab, Stats, Raycast with
-# their data (brew --zap: their settings, caches, Raycast snippets/clipboard), clears their permissions, and puts back
-# the Dock / Spaces / keyboard-shortcut settings saved in ~/.mac-dotfiles-snapshot/. Your windows and other apps are
-# not touched. The repo (and its config/) stays, so install.sh can bring everything back.
+# their data (brew --zap: their settings, caches, Raycast snippets/clipboard), clears their permissions, removes the
+# scratchpad helper (LaunchAgent, 2026-10-08), and puts back the Dock / Spaces / keyboard-shortcut settings saved in
+# ~/.mac-dotfiles-snapshot/. Your windows and other apps are not touched. The repo (and its config/) stays, so
+# install.sh can bring everything back.
 set -uo pipefail
 SNAP="$HOME/.mac-dotfiles-snapshot"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 say() { printf '\033[36m==> %s\033[0m\n' "$*"; }
+
+say "Remove the scratchpad helper (LaunchAgent)"
+launchctl bootout "gui/$(id -u)/com.mac-dotfiles.omniwm-scratchpads" 2> /dev/null
+rm -f "$HOME/Library/LaunchAgents/com.mac-dotfiles.omniwm-scratchpads.plist"
 
 say "Quit the apps"
 ids=()
